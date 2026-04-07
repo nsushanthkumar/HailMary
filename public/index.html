@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05050f">
+  <title>Happy Birthday Varsha! 🎉</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Dancing+Script:wght@600;700&family=Poppins:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Animated starfield background -->
+  <canvas id="starfield"></canvas>
+  <!-- Confetti overlay -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ── NAV ── -->
+  <nav id="main-nav">
+    <span class="nav-brand">✨ Chitti's Day ✨</span>
+    <div class="nav-links">
+      <a href="#alive">Timer</a>
+      <a href="#facts">Facts</a>
+      <a href="#love-cards">7 Things</a>
+      <a href="#photos">Photos</a>
+      <a href="#vibes">Vibes</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-date">April 7<sup>th</sup> · 2003 → 2026</div>
+
+      <h1 class="hero-title">
+        <span class="happy">Happy Birthday</span>
+        <span class="name-varsha">Varsha!</span>
+      </h1>
+
+      <div class="hero-nickname">
+        <span class="chitti-text">✨ Chitti ✨</span>
+      </div>
+
+      <p class="hero-age">Turning <span class="age-num">23</span> today 🎂</p>
+
+      <button class="confetti-btn" onclick="fireConfetti()">🎉 Celebrate!</button>
+
+      <div class="seven-detail">
+        <span>Born on the</span>
+        <span class="seven-num">7<sup>th</sup></span>
+        <span>· Life Path</span>
+        <span class="seven-num">7</span>
+        <span>· Day of the Stars</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint">↓ scroll to explore ↓</div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       TIME ALIVE COUNTER
+  ══════════════════════════════════ -->
+  <section id="alive">
+    <h2 class="section-title">⏱ You've Been Awesome For...</h2>
+    <div class="alive-grid">
+      <div class="alive-unit">
+        <span class="alive-num" id="alive-years">23</span>
+        <span class="alive-label">Years</span>
+      </div>
+      <div class="alive-sep">·</div>
+      <div class="alive-unit">
+        <span class="alive-num" id="alive-days">—</span>
+        <span class="alive-label">Total Days</span>
+      </div>
+      <div class="alive-sep">·</div>
+      <div class="alive-unit">
+        <span class="alive-num" id="alive-hours">—</span>
+        <span class="alive-label">Total Hours</span>
+      </div>
+      <div class="alive-sep">·</div>
+      <div class="alive-unit">
+        <span class="alive-num" id="alive-mins">—</span>
+        <span class="alive-label">Total Minutes</span>
+      </div>
+      <div class="alive-sep">·</div>
+      <div class="alive-unit">
+        <span class="alive-num" id="alive-secs">—</span>
+        <span class="alive-label">Total Seconds</span>
+      </div>
+    </div>
+    <p class="alive-note">counting from midnight, April 7, 2003 🌙</p>
+  </section>
+
+  <!-- ══════════════════════════════════
+       BIRTHDAY FACTS
+  ══════════════════════════════════ -->
+  <section id="facts">
+    <h2 class="section-title">🔮 Birthday Facts</h2>
+    <p class="section-sub">Things the universe arranged just for you</p>
+    <div class="facts-grid" id="facts-grid">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       7 THINGS I LOVE ABOUT YOU
+       Edit LOVE_THINGS in script.js to fill in the cards.
+  ══════════════════════════════════ -->
+  <section id="love-cards">
+    <h2 class="section-title">💜 7 Things I Love About You</h2>
+    <p class="section-sub">Each card holds a secret · click one and solve the riddle to reveal it 🔮</p>
+    <div class="love-grid" id="love-grid">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       PHOTO WALL
+       To add a real photo, replace a .photo-slot's contents with:
+       <img src="your-photo.jpg" alt="caption" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+  ══════════════════════════════════ -->
+  <section id="photos">
+    <h2 class="section-title">📸 Memory Wall</h2>
+    <p class="section-sub">The best moments, frozen in light</p>
+
+    <div class="photo-grid">
+      <div class="photo-slot"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot photo-tall"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot photo-wide"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot photo-wide"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot photo-tall"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+      <div class="photo-slot"><div class="photo-inner"><span class="photo-icon">📷</span><span class="photo-label">Add Photo</span></div></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       ROAST + LOVE
+  ══════════════════════════════════ -->
+  <section id="vibes">
+    <h2 class="section-title">💫 Roast &amp; Toast</h2>
+    <p class="section-sub">Because you deserve both</p>
+
+    <div class="vibes-container">
+      <div class="vibes-col">
+        <h3 class="vibes-header roast-header">🔥 The Roast</h3>
+        <div class="vibe-card roast-card">
+          <p>"You've been eating for 23 years and still can't decide what you want for dinner."</p>
+        </div>
+        <div class="vibe-card roast-card">
+          <p>"23 years old and still can't fold a fitted sheet. Honestly, same."</p>
+        </div>
+        <div class="vibe-card roast-card">
+          <p>"You send voice notes longer than most movies. We love you anyway."</p>
+        </div>
+        <!-- ✏️ Add more roast messages below -->
+        <div class="vibe-card roast-card placeholder-card">
+          <p><em>✏️ Add your roast here...</em></p>
+        </div>
+      </div>
+
+      <div class="vibes-col">
+        <h3 class="vibes-header love-header">💖 The Love</h3>
+        <div class="vibe-card love-card">
+          <p>"Your laugh is genuinely contagious — dangerous in quiet places."</p>
+        </div>
+        <div class="vibe-card love-card">
+          <p>"You somehow make everything more fun just by being there."</p>
+        </div>
+        <div class="vibe-card love-card">
+          <p>"23 years of you is still not enough. Here's to many more."</p>
+        </div>
+        <!-- ✏️ Add more love messages below -->
+        <div class="vibe-card love-card placeholder-card">
+          <p><em>💕 Add your message here...</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>Made with 💜 for Varsha "Chitti" · April 7<sup>th</sup>, 2026</p>
+    <p class="footer-stars">✨ ⭐ 🌟 ⭐ ✨</p>
+  </footer>
+
+  <!-- ══════════════════════════════════
+       RIDDLE MODAL (per-card)
+  ══════════════════════════════════ -->
+  <div id="riddle-modal" class="riddle-modal hidden" onclick="handleModalOverlayClick(event)">
+    <div class="riddle-modal-box">
+      <button class="modal-close" onclick="closeRiddleModal()">✕</button>
+      <div class="modal-card-label" id="modal-card-label">Card 1</div>
+      <p class="modal-riddle-q" id="modal-riddle-q"></p>
+      <input type="text" id="modal-riddle-input" class="riddle-input"
+             placeholder="Your answer..." autocomplete="off">
+      <div class="riddle-feedback" id="modal-feedback"></div>
+      <button class="riddle-btn" onclick="checkModalAnswer()">Submit ✨</button>
+      <p class="modal-hint" id="modal-hint"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
